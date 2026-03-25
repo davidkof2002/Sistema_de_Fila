@@ -22,6 +22,6 @@ framework - Flask
     
 
 Nome da Equipe:
-David William dos santos
-Karoline Larissa Torres de Amorim
+David William dos santos,
+Karoline Larissa Torres de Amorim,
 Thalisson gonsales da silva

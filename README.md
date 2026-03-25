@@ -15,10 +15,10 @@ Quem vai mudar o estado do paciente.
      - O Atedente.
    
 Sistema foi feito usando as linguagens
-HTML
-CSS
-Python
-framework - Flask
+HTML,
+CSS,
+Python,
+framework - Flask.
     
 
 Nome da Equipe:

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Fila</title>
+    <!-- Essa linha conecta o HTML com o seu CSS na pasta static -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>💉 Fila de Espera</h1>
+        
+        <form action="/adicionar" method="POST">
+            <input type="text" name="nome" placeholder="Nome do paciente" required>
+            <button type="submit">Entrar na Fila</button>
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Status</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in lista %}
+                <tr>
+                    <td>{{ p.nome }}</td>
+                    <td><span class="status-badge">{{ p.status }}</span></td>
+                    <td>
+                        {% if p.status == 'Aguardando' %}
+                            <a href="/atender/{{ loop.index0 }}"><button style="background: #2196F3;">Atender</button></a>
+                        {% elif p.status == 'Em Atendimento' %}
+                            <a href="/finalizar/{{ loop.index0 }}"><button style="background: #f44336;">Finalizar</button></a>
+                        {% else %}
+                            ✅
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <br>
+        <a href="/limpar" style="color: #666; font-size: 0.8em;">Limpar tudo</a>
+    </div>
+
+</body>
+</html>

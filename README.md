@@ -1,6 +1,6 @@
 # Sistema_de_Fila
 
-Sistema de fila de atedimento.
+Sistema de fila
 
 Regras:
 Realizar cadastro.
